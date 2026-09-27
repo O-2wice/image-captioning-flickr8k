@@ -1,0 +1,10 @@
+{
+  "source_filename": "HW1_Image_Captioning_2 (2).ipynb",
+  "sha256": "8f3df2463a2c56ff812f5a03ad288162e1b335730a53540285157cbd14ebf847",
+  "cell_count": 63,
+  "code_cell_count": 28,
+  "status": "Historical source fingerprints only; duplicate source notebook removed from the project.",
+  "review_date": "2026-09-11",
+  "sha256_as_received": "2ec864dbacc13ce7059783cee63280a8ef8bcc2393659e5d47c968c95eac8de7",
+  "redaction": "12 of 50 saved outputs removed from cell 38: the W&B login exchange and the run links carrying the author's handle and private project URLs. No source cell was altered; the training log is intact."
+}

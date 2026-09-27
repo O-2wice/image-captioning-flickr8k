@@ -1,0 +1,74 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - assets/social-card.png
+    - assets/favicon.png
+    - assets/figures/*.png
+    - assets/explore/*
+  render:
+    - index.qmd
+
+website:
+  title: "Image Captioning on Flickr8k"
+  description: >-
+    How a model learns to describe a photograph in a sentence: a ViT encoder,
+    an attention layer and an LSTM decoder, built and explained one piece at a
+    time, with BLIP as a reference point.
+  # site-url lets Quarto emit a sitemap and absolute URLs for the social tags.
+  # Without it there is no sitemap.xml and og:image cannot resolve.
+  site-url: "https://o-2wice.github.io/image-captioning-flickr8k/"
+  repo-url: "https://github.com/O-2wice/image-captioning-flickr8k"
+  favicon: assets/favicon.png
+  image: assets/social-card.png
+  open-graph:
+    image-width: 1200
+    image-height: 630
+    locale: en_GB
+  twitter-card:
+    card-style: summary_large_image
+
+  navbar:
+    left:
+      - href: index.qmd
+        text: Report
+      - text: Notebook
+        href: https://github.com/O-2wice/image-captioning-flickr8k/blob/main/notebooks/image-captioning.ipynb
+      - text: Open in Colab
+        href: https://colab.research.google.com/github/O-2wice/image-captioning-flickr8k/blob/main/notebooks/image-captioning.ipynb
+      # Spelled out as well as shown as an icon: an unlabelled glyph in the
+      # corner is easy to miss, and the repository is the main thing a reader
+      # wants after the report.
+      - text: Code
+        href: https://github.com/O-2wice/image-captioning-flickr8k
+    right:
+      - icon: github
+        href: https://github.com/O-2wice/image-captioning-flickr8k
+        aria-label: GitHub repository
+
+  page-footer:
+    border: true
+    left: "Code and the executed notebook: [github.com/O-2wice/image-captioning-flickr8k](https://github.com/O-2wice/image-captioning-flickr8k)"
+    right: "[Report an issue](https://github.com/O-2wice/image-captioning-flickr8k/issues) &nbsp;·&nbsp; [Notebook](https://github.com/O-2wice/image-captioning-flickr8k/blob/main/notebooks/image-captioning.ipynb)"
+
+format:
+  html:
+    lang: en
+    theme:
+      light: [cosmo, assets/theme-light.scss]
+      dark: [darkly, assets/theme-dark.scss]
+    toc: true
+    toc-depth: 3
+    toc-title: "On this page"
+    code-fold: show
+    code-tools: true
+    smooth-scroll: true
+    df-print: paged
+    fig-cap-location: bottom
+
+execute:
+  enabled: false
+  freeze: auto
+  cache: false
+  warning: false
+  message: false

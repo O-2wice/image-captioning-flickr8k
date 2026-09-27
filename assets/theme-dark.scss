@@ -1,0 +1,534 @@
+/*-- scss:defaults --*/
+
+// ---------------------------------------------------------------------------
+// Dark palette
+//
+// The light accents are too dark to read on a dark ground, so both are lifted
+// and desaturated rather than reused: a saturated accent on a dark background
+// vibrates against body text.
+// ---------------------------------------------------------------------------
+
+$ink:       #e7e4dd;
+$muted:     #9ba0b2;
+$faint:     #757a8c;
+$paper:     #181a23;
+$surface:   #20222d;
+$accent:    #e3a572;
+$secondary: #9ba3e2;
+$rule:      rgba(231, 228, 221, .14);
+
+$primary:     $secondary;
+$body-color:  $ink;
+$body-bg:     $paper;
+$link-color:  $accent;
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+$font-family-sans-serif:  "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+$font-family-monospace:   "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+$headings-font-family:    "Newsreader", Georgia, "Times New Roman", serif;
+$font-size-root: 17px;
+$headings-font-weight: 600;
+
+$navbar-bg: #11131a;
+$navbar-fg: $ink;
+$toc-color: $muted;
+
+/*-- scss:rules --*/
+
+main { max-width: 46rem; }
+
+p, li { line-height: 1.75; }
+p { margin-bottom: 1.1rem; }
+
+#title-block-header .quarto-title .title {
+  font-size: 2.6rem;
+  line-height: 1.12;
+  letter-spacing: -.02em;
+  color: $ink;
+}
+
+#title-block-header .subtitle {
+  font-family: "Newsreader", Georgia, serif;
+  font-style: italic;
+  font-size: 1.22rem;
+  color: $muted;
+  margin-top: .45rem;
+}
+
+#title-block-header {
+  border-bottom: 1px solid $rule;
+  padding-bottom: 1.4rem;
+  margin-bottom: 2.2rem;
+}
+
+h2 {
+  margin-top: 3.6rem;
+  margin-bottom: 1.1rem;
+  font-size: 1.68rem;
+  letter-spacing: -.014em;
+  color: $ink;
+  position: relative;
+  padding-top: 1.1rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.4rem;
+    height: 3px;
+    background: $accent;
+    border-radius: 2px;
+  }
+}
+
+h3 {
+  margin-top: 2.3rem;
+  margin-bottom: .7rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: $secondary;
+  letter-spacing: -.008em;
+}
+
+.lead-in {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.34rem;
+  line-height: 1.55;
+  color: #d9d6ce;
+  margin: 0 0 1.8rem;
+  display: block;
+}
+
+.math.display {
+  margin: 1.7rem 0;
+  padding: .5rem 0 .5rem 1.2rem;
+  border-left: 2px solid rgba(155, 163, 226, .4);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+mjx-container[display="true"] { margin: 0 !important; }
+
+.caption-quote {
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.14rem;
+  color: $accent;
+  background: rgba(227, 165, 114, .08);
+  border-left: 3px solid rgba(227, 165, 114, .5);
+  padding: .6rem 1rem;
+  margin: 1.3rem 0;
+  display: block;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin: 1.5rem 0 1.9rem;
+  padding: 0;
+  list-style: none;
+}
+
+.steps li {
+  font-family: "JetBrains Mono", monospace;
+  font-size: .78rem;
+  border: 1px solid $rule;
+  border-radius: 4px;
+  padding: .32rem .62rem;
+  background: $surface;
+  color: $ink;
+}
+
+.steps li .n { color: $faint; margin-right: .45rem; }
+.steps li.emit { border-color: rgba(227, 165, 114, .45); color: $accent; background: rgba(227, 165, 114, .06); }
+.steps li.stop { border-style: dashed; color: $muted; }
+
+.term {
+  background: rgba(155, 163, 226, .07);
+  border: 1px solid rgba(155, 163, 226, .2);
+  border-left: 3px solid rgba(155, 163, 226, .6);
+  border-radius: 0 5px 5px 0;
+  padding: .95rem 1.1rem .8rem;
+  margin: 1.7rem 0;
+  font-size: .95rem;
+  color: #c6c9d6;
+
+  p:last-child { margin-bottom: 0; }
+  strong:first-child { color: $secondary; }
+}
+
+table {
+  font-variant-numeric: tabular-nums;
+  font-size: .93rem;
+  margin: 1.6rem 0;
+  width: 100%;
+}
+
+thead th {
+  border-bottom: 2px solid $secondary !important;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: .82rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+tbody td { border-bottom: 1px solid $rule; padding: .5rem .6rem; }
+tbody tr:last-child td { border-bottom: none; }
+
+figure { margin: 2.4rem 0; }
+
+figcaption, .figure-caption {
+  font-size: .88rem;
+  line-height: 1.55;
+  color: $muted;
+  padding-top: .6rem;
+  margin-top: .6rem;
+  border-top: 1px solid $rule;
+}
+
+.diagram {
+  margin: 2.4rem 0;
+  padding: 1.2rem 1.1rem .4rem;
+  background: $surface;
+  border: 1px solid $rule;
+  border-radius: 6px;
+
+  svg { width: 100%; height: auto; display: block; }
+  figcaption { padding: .7rem 0 .9rem; margin-top: .8rem; }
+
+  .d-box   { fill: rgba(231, 228, 221, .05); stroke: rgba(231, 228, 221, .28); stroke-width: 1.2; }
+  .d-img   { fill: rgba(155, 163, 226, .16); stroke: rgba(155, 163, 226, .55); stroke-width: 1.2; }
+  .d-word  { fill: rgba(227, 165, 114, .13); stroke: rgba(227, 165, 114, .55); stroke-width: 1.2; }
+  .d-grid  { stroke: rgba(155, 163, 226, .32); stroke-width: .7; fill: none; }
+  .d-hot1  { fill: rgba(227, 165, 114, .85); }
+  .d-hot2  { fill: rgba(227, 165, 114, .38); }
+  .d-hot3  { fill: rgba(227, 165, 114, .6); }
+  .d-label { fill: $ink;   font-family: "Inter", sans-serif; font-size: 13.5px; font-weight: 500; text-anchor: middle; }
+  .d-small { fill: $muted; font-family: "Inter", sans-serif; font-size: 11px; text-anchor: middle; }
+  .d-arrow { stroke: rgba(155, 160, 178, .85); stroke-width: 1.3; fill: none; }
+  .d-dash  { stroke-dasharray: 3 3; }
+  .d-head  { fill: rgba(155, 160, 178, .85); }
+}
+
+strong { color: $accent; font-weight: 600; }
+
+code:not(.sourceCode) {
+  color: $secondary;
+  background: rgba(155, 163, 226, .12);
+  padding: .1em .36em;
+  border-radius: 3px;
+  font-size: .88em;
+}
+
+blockquote {
+  border-left: 3px solid rgba(155, 163, 226, .35);
+  background: transparent;
+  color: $muted;
+  padding: .3rem 0 .3rem 1.1rem;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.04rem;
+  font-style: italic;
+}
+
+.citation a { color: $secondary; text-decoration: none; border-bottom: 1px solid rgba(155, 163, 226, .35); }
+
+#refs {
+  font-size: .9rem;
+  line-height: 1.6;
+  .csl-entry { margin-bottom: .6rem; color: $muted; }
+}
+
+#TOC, .sidebar { font-size: .86rem; }
+
+// ---------------------------------------------------------------------------
+// Scoreboard
+//
+// The headline numbers sit above the method so a reader knows the outcome
+// before deciding how much of the derivation to read.
+// ---------------------------------------------------------------------------
+
+.scoreboard {
+  margin: 2.2rem 0 2.6rem;
+  border: 1px solid $rule;
+  border-radius: 7px;
+  overflow: hidden;
+  background: $surface;
+}
+
+.sb-head {
+  font-family: "Inter", sans-serif;
+  font-size: .76rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: $muted;
+  padding: .7rem 1rem .6rem;
+  border-bottom: 1px solid $rule;
+  background: rgba(155, 163, 226, .07);
+}
+
+.sb-row { display: flex; flex-wrap: wrap; }
+
+.sb-cell {
+  flex: 1 1 24%;
+  min-width: 108px;
+  padding: 1.05rem .6rem .95rem;
+  text-align: center;
+  border-right: 1px solid $rule;
+  &:last-child { border-right: none; }
+}
+
+.sb-n {
+  display: block;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.86rem;
+  line-height: 1;
+  color: $accent;
+  font-variant-numeric: tabular-nums;
+}
+
+.sb-l {
+  display: block;
+  margin-top: .35rem;
+  font-family: "Inter", sans-serif;
+  font-size: .72rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.sb-foot {
+  font-size: .86rem;
+  color: $muted;
+  padding: .7rem 1rem .8rem;
+  border-top: 1px solid $rule;
+  b { color: $secondary; font-variant-numeric: tabular-nums; font-weight: 600; }
+}
+
+// ---------------------------------------------------------------------------
+// Caption comparison
+//
+// Three voices on one image. Colour separates them faster than labels do, and
+// the grid keeps a long list scannable.
+// ---------------------------------------------------------------------------
+
+.captions { margin: 2rem 0 1.6rem; display: grid; gap: .9rem; }
+
+.cap {
+  border: 1px solid $rule;
+  border-radius: 6px;
+  background: $surface;
+  padding: .85rem 1rem .75rem;
+  font-size: .95rem;
+  line-height: 1.5;
+}
+
+.cap > div { padding: .16rem 0; }
+
+.cap span {
+  display: inline-block;
+  min-width: 5.4rem;
+  font-family: "Inter", sans-serif;
+  font-size: .66rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+.cap-ref  { color: $ink; }
+.cap-ours { color: $accent; font-weight: 500; }
+.cap-blip { color: $secondary; }
+.cap-bad  { text-decoration: underline wavy rgba(227, 165, 114, .5); text-underline-offset: 4px; }
+
+.cap-note {
+  margin-top: .45rem;
+  padding-top: .5rem;
+  border-top: 1px solid $rule;
+  font-size: .85rem;
+  color: $muted;
+}
+
+// A short judgement, set apart from the surrounding argument.
+.verdict {
+  border-left: 3px solid $accent;
+  background: rgba(227, 165, 114, .08);
+  border-radius: 0 6px 6px 0;
+  padding: .95rem 1.15rem;
+  margin: 1.8rem 0;
+  font-family: "Newsreader", Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.55;
+
+  p:last-child { margin-bottom: 0; }
+  strong { color: $accent; }
+}
+
+// ---------------------------------------------------------------------------
+// Interactive panels
+//
+// The attention explorer draws a 14x14 canvas scaled over the photograph, so
+// the grain you see is the real resolution of the weights, not a blur.
+// ---------------------------------------------------------------------------
+
+.explorer, .playground {
+  margin: 2.2rem 0;
+  border: 1px solid $rule;
+  border-radius: 7px;
+  background: $surface;
+  overflow: hidden;
+}
+
+.ex-head {
+  padding: .7rem 1rem .6rem;
+  border-bottom: 1px solid $rule;
+  background: rgba(155, 163, 226, .07);
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .55rem;
+}
+
+.ex-title {
+  font-family: "Inter", sans-serif; font-weight: 600;
+  font-size: .78rem; letter-spacing: .07em; text-transform: uppercase; color: $secondary;
+}
+
+.ex-sub { font-size: .82rem; color: $muted; }
+
+.ex-body { display: flex; flex-wrap: wrap; gap: 1.1rem; padding: 1rem; }
+
+.ex-stage {
+  position: relative; flex: 0 0 auto; width: 288px; max-width: 100%;
+  border-radius: 5px; overflow: hidden; background: #000;
+  img { display: block; width: 100%; height: auto; }
+  canvas {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    image-rendering: auto; mix-blend-mode: screen; pointer-events: none;
+  }
+}
+
+.ex-side { flex: 1 1 250px; min-width: 230px; }
+
+.ex-label {
+  font-family: "Inter", sans-serif; font-size: .66rem; letter-spacing: .08em;
+  text-transform: uppercase; color: $muted; margin: .1rem 0 .4rem;
+}
+
+.ex-thumbs { display: flex; gap: .4rem; margin-bottom: .9rem; }
+
+.ex-thumb {
+  width: 46px; height: 46px; object-fit: cover; border-radius: 4px;
+  cursor: pointer; opacity: .5; border: 2px solid transparent; transition: opacity .15s;
+  &:hover { opacity: .85; }
+  &.on { opacity: 1; border-color: $accent; }
+}
+
+.ex-words { display: flex; flex-wrap: wrap; gap: .32rem; margin-bottom: .85rem; }
+
+.ex-word {
+  font-family: "JetBrains Mono", monospace; font-size: .78rem;
+  border: 1px solid $rule; background: transparent; color: $ink;
+  border-radius: 4px; padding: .26rem .55rem; cursor: pointer;
+  transition: all .12s;
+  &:hover { border-color: $accent; }
+  &.on { background: $accent; border-color: $accent; color: #fff; }
+}
+
+.ex-stats { font-size: .82rem; color: $muted; line-height: 1.5;
+  b { color: $accent; font-variant-numeric: tabular-nums; } }
+
+// --- BLEU playground -------------------------------------------------------
+
+.pg-body { padding: 1rem; }
+
+.pg-refs { margin-bottom: .95rem; display: grid; gap: .26rem; }
+
+.pg-ref {
+  font-size: .87rem; color: $muted;
+  span {
+    display: inline-block; min-width: 2.4rem;
+    font-family: "Inter", sans-serif; font-size: .62rem; letter-spacing: .08em;
+    text-transform: uppercase; color: $faint;
+  }
+}
+
+#pg-input {
+  width: 100%; box-sizing: border-box;
+  font-family: "Newsreader", Georgia, serif; font-size: 1.06rem;
+  color: $accent; background: rgba(155, 163, 226, .07);
+  border: 1px solid $rule; border-radius: 5px; padding: .55rem .75rem;
+  &:focus { outline: none; border-color: $accent; }
+}
+
+.pg-try {
+  margin: .6rem 0 .9rem; font-size: .78rem; color: $muted;
+  button {
+    font-family: "Inter", sans-serif; font-size: .74rem;
+    background: transparent; color: $secondary; cursor: pointer;
+    border: 1px solid $rule; border-radius: 20px; padding: .2rem .62rem;
+    margin: .16rem .18rem 0 0;
+    &:hover { border-color: $secondary; }
+  }
+}
+
+.pg-table {
+  width: 100%; margin: 0; font-size: .88rem;
+  th { font-size: .66rem; }
+  td { padding: .32rem .5rem; border-bottom: 1px solid $rule; }
+  tr:last-child td { border-bottom: none; }
+}
+
+.pg-num { font-variant-numeric: tabular-nums; color: $ink; text-align: right; width: 5.4rem; }
+.pg-num.zero { color: $faint; }
+
+.pg-bar {
+  display: block; height: 7px; border-radius: 4px; background: $rule; overflow: hidden;
+  i { display: block; height: 100%; background: $accent; }
+}
+
+.pg-note { margin-top: .6rem; font-size: .82rem; color: $muted;
+  b { color: $accent; } }
+
+// ---------------------------------------------------------------------------
+// Collapsed algebra
+//
+// The derivations are kept, but folded away, so the page reads as an argument
+// and opens into the working only where a reader asks for it.
+// ---------------------------------------------------------------------------
+
+.callout.callout-style-default {
+  border: 1px solid $rule;
+  border-left: 3px solid $secondary;
+  border-radius: 0 5px 5px 0;
+  background: $surface;
+  margin: 1.5rem 0;
+  box-shadow: none;
+
+  .callout-header {
+    background: rgba(155, 163, 226, .07);
+    border-bottom: none;
+    padding: .5rem .85rem;
+    align-items: center;
+    opacity: 1;
+  }
+
+  .callout-title-container {
+    font-family: "Inter", sans-serif;
+    font-size: .76rem;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: $secondary;
+    font-weight: 600;
+  }
+
+  // The bootstrap icon column carries a note glyph that means nothing here.
+  .callout-icon::before, .callout-icon { display: none !important; }
+
+  .callout-body-container { padding: .2rem .95rem .1rem; }
+
+  .math.display { margin: .9rem 0; border-left: none; padding-left: 0; }
+}
+
+// Chevron in the project's own ink rather than the theme default.
+.callout.callout-style-default .callout-btn-toggle,
+.callout.callout-style-default .callout-toggle::before { filter: none; opacity: .55; }

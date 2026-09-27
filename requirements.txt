@@ -1,0 +1,15 @@
+# Local checks only. Training runs in Colab, which supplies its own stack.
+# scripts/review_original.py and scripts/check_review_fixes.py need these.
+torch>=2.3
+torchvision>=0.17
+numpy>=1.26
+matplotlib>=3.8
+pillow>=10
+nbformat>=5.10
+ipython>=8.20
+
+# The notebook additionally uses these when it runs:
+# nltk>=3.8            tokenisation and BLEU
+# transformers>=4.40   the BLIP reference model
+# pandas>=2.2          caption loading
+# tqdm>=4.66           progress bars

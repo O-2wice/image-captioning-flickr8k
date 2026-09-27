@@ -90,6 +90,7 @@ read-only checks on the notebook source plus small CPU fixtures. They perform no
 training, downloads or authentication:
 
 ```bash
+pip install -r requirements.txt
 python scripts/review_original.py
 python scripts/check_review_fixes.py
 ```
@@ -125,6 +126,7 @@ match the current run rather than silently assigning weights to different words.
 | [reproducibility/](reproducibility/) | Per-file SHA-256 manifest for the dataset |
 | [review/](review/) | Correctness review of the original notebook and its provenance record |
 | [scripts/](scripts/) | Read-only checks over the notebook source |
+| [requirements.txt](requirements.txt) | Dependencies for those checks |
 
 Model weights, the dataset, generated outputs and local environments are not
 tracked.

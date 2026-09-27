@@ -1,10 +1,10 @@
-"""Read-only source checks and tiny fixture runs; never runs notebook training.
+"""Read-only checks over the project notebook; never runs training.
 
-The manifest records the notebook as first reviewed. The corrections described
-in review/notebook-review.md have since been applied, so this script asserts
-that each fix is present rather than that the source is untouched. Defects left
-deliberately unfixed, because they need a design decision rather than a
-correction, are still reproduced and labelled as such.
+Asserts that each correction recorded in review/notebook-review.md is still
+present, that attention varies with the query rather than being uniform by
+construction, that evaluation holds its reference caption fixed, and that no
+credentials or account identifiers appear anywhere in the notebook. Runs a few
+small CPU fixtures; performs no downloads and no authentication.
 """
 import ast
 import json

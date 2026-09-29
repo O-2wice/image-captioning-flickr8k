@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  # Lists the home page in sitemap.xml as .../ rather than .../index.html
+  post-render: fix-sitemap.ts
   resources:
     - assets/social-card.png
     - assets/favicon.png
@@ -65,6 +67,10 @@ format:
     smooth-scroll: true
     df-print: paged
     fig-cap-location: bottom
+    # Google Search Console ownership; removing it unverifies the property
+    include-in-header:
+      text: |
+        <meta name="google-site-verification" content="jrY_3kfE94UgAOUETVccWoXGGhYpIR16svPJzQmwXFI" />
 
 execute:
   enabled: false

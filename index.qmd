@@ -1,5 +1,6 @@
 ---
 title: "Image Captioning on Flickr8k"
+pagetitle: "Image captioning on Flickr8k: ViT encoder, attention and LSTM decoder"
 subtitle: "A ViT–attention–LSTM captioner, derived from the objective down to the tensor shapes"
 description: >-
   How a ViT encoder, scaled dot-product attention and an LSTM decoder turn a

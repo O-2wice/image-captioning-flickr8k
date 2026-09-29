@@ -55,6 +55,8 @@ website:
 
 format:
   html:
+    # Without this Quarto appends the site title, repeating it in the tab
+    title-prefix: ""
     lang: en
     theme:
       light: [cosmo, assets/theme-light.scss]

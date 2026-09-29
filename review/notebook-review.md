@@ -1,6 +1,8 @@
 # Original notebook correctness review
 
-Reviewed 11 September 2026. Cell numbers below are one-based, counting Markdown and code cells. This is a historical review of the source notebook, not a report of completed training. No notebook changes are included.
+Cell numbers below are one-based, counting Markdown and code cells.
+
+This records the defects found in the notebook this project started from, before any of them were fixed. The source notebook itself is not in the repository; `notebooks/image-captioning.ipynb` is the corrected version, and every finding listed here is asserted by `scripts/review_original.py` so it cannot silently return. Kept as the provenance record of what changed and why.
 
 ## Findings requiring correction or an explicit methodological decision
 

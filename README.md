@@ -139,3 +139,7 @@ flattened.
 
 Built on a course assignment notebook by Tamás Takács and Imre Molnár,
 Department of Artificial Intelligence, Eötvös Loránd University.
+
+## License
+
+[MIT](LICENSE). The dataset and any pretrained weights keep their own licences.

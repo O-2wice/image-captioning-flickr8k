@@ -101,20 +101,17 @@ follows validation loss, that BLEU uses all five references with matched
 tokenisation, and that no credentials or account identifiers appear anywhere in
 the notebook.
 
-## Trained weights
+## Checkpoints
 
-Too large for the repository and not tracked:
+Running the notebook writes its own into `checkpoints/`: `best_model.pth` with
+the selected epoch's weights, and `last_checkpoint.pth` with the optimizer,
+scheduler, scaler and full history alongside them. Together they come to about
+1.5 GB, so neither is tracked here.
 
-| File | Size | Contents |
-| --- | ---: | --- |
-| `best_model.pth` | 394 MB | weights of the selected epoch |
-| `last_checkpoint.pth` | 1.14 GB | weights plus optimizer, scheduler, scaler and full history |
-
-Download: *(shared link to be added)*
-
-Place them in `checkpoints/`. Both carry the vocabulary and run configuration,
-and resuming refuses a checkpoint whose vocabulary or configuration does not
-match the current run rather than silently assigning weights to different words.
+Both carry the vocabulary and the run configuration. Resuming refuses a
+checkpoint whose vocabulary or configuration does not match the current run,
+rather than silently assigning weights to different words, so a mid-run
+disconnect costs one epoch and nothing else.
 
 ## Repository layout
 
